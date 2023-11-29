@@ -1,22 +1,30 @@
 import "./App.css";
 
-export default function Logo() {
+export default function Navbar() {
   return (
-    <div className="container">
-      <div class="logo">
-        <ion-icon name="logo-instagram"></ion-icon>
-        <div class="separador"></div>
-        <img src="img/logo.png" />
+    <div className="navbar">
+      <div className="container">
+        <Logo />
+        <Pesquisa />
+        <Icones />
       </div>
-      <Pesquisa />
-      <Icones />
+    </div>
+  );
+}
+
+function Logo() {
+  return (
+    <div className="logo">
+      <ion-icon name="logo-instagram"></ion-icon>
+      <div className="separador"></div>
+      <img src="img/logo.png" alt="logo" />
     </div>
   );
 }
 
 function Pesquisa() {
   return (
-    <div class="pesquisa">
+    <div className="pesquisa">
       <input type="text" placeholder="Pesquisar" />
     </div>
   );
