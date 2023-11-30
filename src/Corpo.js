@@ -1,7 +1,7 @@
 import "./App.css";
 import Story from "./Story";
 import Post from "./Post";
-import Sugestao from "./Sugestoes";
+import Sidebar from "./Sidebar";
 
 export default function Corpo() {
   return (
@@ -10,7 +10,8 @@ export default function Corpo() {
         <Stories />
         <Posts />
       </div>
-      <RodaSugestoes />
+      <RodaSidebar />
+      <FundoMobile />
     </div>
   );
 }
@@ -19,6 +20,9 @@ function Stories() {
   return (
     <div className="stories">
       <Story />
+      <div class="setinha">
+        <ion-icon name="chevron-forward-circle"></ion-icon>
+      </div>
     </div>
   );
 }
@@ -31,30 +35,18 @@ function Posts() {
   );
 }
 
-function RodaSugestoes() {
+function RodaSidebar() {
+  return <Sidebar />;
+}
+
+function FundoMobile() {
   return (
-    <div className="sidebar">
-      <div class="usuario">
-        <img src="img/catanacomics.svg" alt="img" />
-        <div class="texto">
-          <strong>catanacomics</strong>
-          Catana
-        </div>
-      </div>
-
-      <div class="sugestoes">
-        <div class="titulo">
-          Sugestões para você
-          <div>Ver tudo</div>
-        </div>
-        <Sugestao />
-      </div>
-      <div class="links">
-        Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos •
-        Localizações • Contas mais relevantes • Hashtags • Idioma
-      </div>
-
-      <div class="copyright">© 2021 INSTAGRAM DO FACEBOOK</div>
+    <div class="fundo-mobile">
+      <ion-icon name="home"></ion-icon>
+      <ion-icon name="search-outline"></ion-icon>
+      <ion-icon name="add-circle-outline"></ion-icon>
+      <ion-icon name="heart-outline"></ion-icon>
+      <ion-icon name="person-outline"></ion-icon>
     </div>
   );
 }
