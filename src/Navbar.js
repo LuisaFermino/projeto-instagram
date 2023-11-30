@@ -32,7 +32,7 @@ function Pesquisa() {
 
 function Icones() {
   return (
-    <div class="icones">
+    <div className="icones">
       <ion-icon name="paper-plane-outline"></ion-icon>
       <ion-icon name="compass-outline"></ion-icon>
       <ion-icon name="heart-outline"></ion-icon>

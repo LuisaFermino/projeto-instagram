@@ -1,42 +1,65 @@
 import "./App.css";
+import AcoesPost from "./AcoesPost";
 
 export default function Post() {
   const usuarios = [
     {
-      usuario: "img/meowed.svg",
+      perfil: "img/meowed.svg",
       nome: "meowed",
       conteudo: "img/gato-telefone.svg",
+      curtidas: "img/respondeai.svg",
+      texto: "Curtido por respondeai e outras 101.523 pessoas",
     },
-    { usuario: "img/barked.svg", nome: "barked", conteudo: "img/dog.svg" },
+    {
+      perfil: "img/barked.svg",
+      nome: "barked",
+      conteudo: "img/dog.svg",
+      curtidas: "img/adorable_animals.svg",
+      texto: " Curtido por adorable_animals e outras 99.159 pessoas",
+    },
   ];
 
   return usuarios.map((usuario) => (
     <EstruturaPost
-      usuario={usuario.usuario}
+      perfil={usuario.perfil}
       nome={usuario.nome}
       conteudo={usuario.conteudo}
+      curtidas={usuario.curtidas}
+      texto={usuario.texto}
     />
   ));
 }
 
 function EstruturaPost(props) {
-  const { usuario, nome, conteudo } = props;
+  const { perfil, nome, conteudo, curtidas, texto } = props;
 
   return (
-    <div class="post">
-      <div class="topo">
-        <div class="usuario">
-          <img src={usuario} alt="img" />
+    <div className="post">
+      <div className="topo">
+        <div className="usuario">
+          <img src={perfil} alt="img" />
           {nome}
         </div>
-        <div class="acoes">
-          <ion-icon name="ellipsis-horizontal"></ion-icon>
-        </div>
+        <Acoes />
       </div>
-
-      <div class="conteudo">
+      <div className="conteudo">
         <img src={conteudo} alt="img" />
       </div>
+      <div className="fundo">
+        <AcoesPost />
+        <div className="curtidas">
+          <img src={curtidas} alt="img" />
+          <div className="texto">{texto}</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Acoes() {
+  return (
+    <div className="acoes">
+      <ion-icon name="ellipsis-horizontal"></ion-icon>
     </div>
   );
 }
