@@ -1,6 +1,6 @@
 import "./App.css";
 
-export default function Sidebar() {
+export default function Sugestao() {
   const sugestoes = [
     {
       usuario: "img/bad.vibes.memes.svg",
@@ -30,7 +30,7 @@ export default function Sidebar() {
   ];
 
   return sugestoes.map((sugestao) => (
-    <EstruturaSidebar
+    <EstruturaSugestao
       usuario={sugestao.usuario}
       nome={sugestao.nome}
       razao={sugestao.razao}
@@ -38,20 +38,22 @@ export default function Sidebar() {
   ));
 }
 
-function EstruturaSidebar(props) {
+function EstruturaSugestao(props) {
   const { usuario, nome, razao } = props;
 
   return (
-    <div className="sugestao">
-      <div className="usuario">
-        <img src={usuario} alt="img" />
-        <div className="texto">
-          <div className="nome">{nome}</div>
-          <div className="razao">{razao}</div>
+    <div className="sugestoes">
+      <div className="sugestao">
+        <div className="usuario">
+          <img src={usuario} alt="img" />
+          <div className="texto">
+            <div className="nome">{nome}</div>
+            <div className="razao">{razao}</div>
+          </div>
         </div>
-      </div>
 
-      <div className="seguir">Seguir</div>
+        <div className="seguir">Seguir</div>
+      </div>
     </div>
   );
 }

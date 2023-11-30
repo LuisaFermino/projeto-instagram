@@ -1,7 +1,7 @@
 import "./App.css";
 import Story from "./Story";
 import Post from "./Post";
-import Sidebar from "./Sidebar";
+import Sugestao from "./Sugestoes";
 
 export default function Corpo() {
   return (
@@ -10,7 +10,7 @@ export default function Corpo() {
         <Stories />
         <Posts />
       </div>
-      <RodaSidebar />
+      <RodaSugestoes />
     </div>
   );
 }
@@ -31,16 +31,30 @@ function Posts() {
   );
 }
 
-function RodaSidebar() {
+function RodaSugestoes() {
   return (
     <div className="sidebar">
-      <div className="sugestoes">
+      <div class="usuario">
+        <img src="img/catanacomics.svg" alt="img" />
+        <div class="texto">
+          <strong>catanacomics</strong>
+          Catana
+        </div>
+      </div>
+
+      <div class="sugestoes">
         <div class="titulo">
           Sugestões para você
           <div>Ver tudo</div>
         </div>
-        <Sidebar />
+        <Sugestao />
       </div>
+      <div class="links">
+        Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos •
+        Localizações • Contas mais relevantes • Hashtags • Idioma
+      </div>
+
+      <div class="copyright">© 2021 INSTAGRAM DO FACEBOOK</div>
     </div>
   );
 }
